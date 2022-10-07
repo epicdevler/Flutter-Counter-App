@@ -9,20 +9,59 @@ class TabCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomeScreen(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return _HomeScreen();
+  }
+}
+
+class _HomeScreen extends State<StatefulWidget> {
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        Text("Counter"),
-        Text("24"),
-      ],
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text("Counter"),
+            Expanded(
+              child: Center(child: Text("${counter}")),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    counter--;
+                  });
+                },
+                child: const Icon(
+                  Icons.remove,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    counter++;
+                  });
+                },
+                child: const Icon(Icons.add),
+              ),
+            ]),
+          ],
+        ),
+      ),
     );
   }
 }
