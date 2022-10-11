@@ -37,9 +37,12 @@ class _HomeScreen extends State<StatefulWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("Counter"),
+
               Expanded(
-                child: Center(child: Text("${counter}")),
+                child: Center(
+                  child: Text("$counter", style: const TextStyle(
+                    fontSize: 60.0
+                  ),),),
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 ElevatedButton(
@@ -49,14 +52,15 @@ class _HomeScreen extends State<StatefulWidget> {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(side: BorderSide(color: Colors.orange, width: 2.0),),
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    padding: const EdgeInsets.all(24.0),
+                      backgroundColor: Colors.transparent,
+                      elevation: 0.0,
+                      shape: CircleBorder(
+                          side: BorderSide(width: 3.0, color: Colors.green)),
+                      padding: EdgeInsets.all(24.0)
                   ),
                   child: const Icon(
                     Icons.remove,
-                    color: Colors.orange,
+                    color: Colors.green,
                   ),
                 ),
                 ElevatedButton(
@@ -66,14 +70,15 @@ class _HomeScreen extends State<StatefulWidget> {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(side: BorderSide(color: Colors.orange, width: 2.0),),
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    padding: const EdgeInsets.all(24.0),
+                      backgroundColor: Colors.transparent,
+                      elevation: 0.0,
+                      shape: const CircleBorder(
+                          side: BorderSide(width: 3.0, color: Colors.green)),
+                      padding: const EdgeInsets.all(24.0)
                   ),
                   child: const Icon(
                     Icons.add,
-                    color: Colors.orange,
+                    color: Colors.green,
                   ),
                 ),
               ]),
