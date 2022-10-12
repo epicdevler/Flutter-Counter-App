@@ -37,7 +37,7 @@ class _HomeScreen extends State<StatefulWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
+              const Text("Counter", style: TextStyle(fontSize: 30.0, color: Colors.green)),
               Expanded(
                 child: Center(
                   child: Text("$counter", style: const TextStyle(
@@ -54,9 +54,9 @@ class _HomeScreen extends State<StatefulWidget> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       elevation: 0.0,
-                      shape: CircleBorder(
+                      shape: const CircleBorder(
                           side: BorderSide(width: 3.0, color: Colors.green)),
-                      padding: EdgeInsets.all(24.0)
+                      padding: const EdgeInsets.all(24.0)
                   ),
                   child: const Icon(
                     Icons.remove,
